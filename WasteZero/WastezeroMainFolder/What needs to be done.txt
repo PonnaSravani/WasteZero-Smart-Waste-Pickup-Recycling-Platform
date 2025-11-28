@@ -1,0 +1,2 @@
+1. Mark attendance of the volunteers at event
+2. Pie chart of events that the volunteer has applied for
