@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 # WasteZero - React Application
 
+=======
+# WasteZero-Smart-Waste-Pickup-Recycling-Platform
+>>>>>>> 878db9ec9c84326a6d4931a8b97a7249cfd74e91
 A comprehensive React application with authentication, dashboard functionality, and backend integration.
 
 ## Features
@@ -72,7 +76,12 @@ wastezero/
 
 1. **Navigate to the project directory:**
    ```bash
+<<<<<<< HEAD
    cd wastezero
+=======
+   cd WasteZero
+   cd WastezeroMainFolder
+>>>>>>> 878db9ec9c84326a6d4931a8b97a7249cfd74e91
    ```
 
 2. **Install dependencies:**
@@ -82,7 +91,11 @@ wastezero/
 
 3. **Start the development server:**
    ```bash
+<<<<<<< HEAD
    npm start
+=======
+   npm run dev
+>>>>>>> 878db9ec9c84326a6d4931a8b97a7249cfd74e91
    ```
 
    The React app will open at `http://localhost:3000`
@@ -101,7 +114,11 @@ wastezero/
 
 3. **Start the backend server:**
    ```bash
+<<<<<<< HEAD
    npm start
+=======
+   npm run dev
+>>>>>>> 878db9ec9c84326a6d4931a8b97a7249cfd74e91
    ```
 
    The backend API will run at `http://localhost:3001`
@@ -180,7 +197,11 @@ JWT_SECRET=your-super-secret-jwt-key
 ### Running in Development Mode
 ```bash
 # Frontend (Terminal 1)
+<<<<<<< HEAD
 cd wastezero
+=======
+cd WasteZero
+>>>>>>> 878db9ec9c84326a6d4931a8b97a7249cfd74e91
 npm start
 
 # Backend (Terminal 2)
@@ -246,6 +267,7 @@ The application includes comprehensive error handling and validation:
 - Backend: Check terminal output for server logs
 - Network: Use browser DevTools to monitor API calls
 
+<<<<<<< HEAD
 ## Contributing
 
 1. Fork the repository
@@ -253,15 +275,20 @@ The application includes comprehensive error handling and validation:
 3. Make your changes
 4. Test thoroughly
 5. Submit a pull request
+=======
+>>>>>>> 878db9ec9c84326a6d4931a8b97a7249cfd74e91
 
 ## License
 
 This project is licensed under the MIT License.
 
+<<<<<<< HEAD
 ## Support
 
 For support and questions, please contact the development team or create an issue in the repository.
 
 ---
 
+=======
+>>>>>>> 878db9ec9c84326a6d4931a8b97a7249cfd74e91
 **Note:** This is a development version. For production use, implement proper database storage, email services, and additional security measures.
