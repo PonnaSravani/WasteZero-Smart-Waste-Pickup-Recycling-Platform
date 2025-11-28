@@ -71,7 +71,8 @@ wastezero/
 
 1. **Navigate to the project directory:**
    ```bash
-   cd wastezero
+   cd WasteZero
+   cd WastezeroMainFolder
    ```
 
 2. **Install dependencies:**
@@ -81,7 +82,7 @@ wastezero/
 
 3. **Start the development server:**
    ```bash
-   npm start
+   npm run dev
    ```
 
    The React app will open at `http://localhost:3000`
@@ -100,7 +101,7 @@ wastezero/
 
 3. **Start the backend server:**
    ```bash
-   npm start
+   npm run dev
    ```
 
    The backend API will run at `http://localhost:3001`
@@ -179,7 +180,7 @@ JWT_SECRET=your-super-secret-jwt-key
 ### Running in Development Mode
 ```bash
 # Frontend (Terminal 1)
-cd wastezero
+cd WasteZero
 npm start
 
 # Backend (Terminal 2)
@@ -245,22 +246,9 @@ The application includes comprehensive error handling and validation:
 - Backend: Check terminal output for server logs
 - Network: Use browser DevTools to monitor API calls
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
 
 ## License
 
 This project is licensed under the MIT License.
-
-## Support
-
-For support and questions, please contact the development team or create an issue in the repository.
-
----
 
 **Note:** This is a development version. For production use, implement proper database storage, email services, and additional security measures.
