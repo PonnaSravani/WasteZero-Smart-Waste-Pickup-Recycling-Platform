@@ -1,294 +1,301 @@
-<<<<<<< HEAD
-# WasteZero - React Application
+# WasteZero - Environmental Impact Management Platform
 
-=======
-# WasteZero-Smart-Waste-Pickup-Recycling-Platform
->>>>>>> 878db9ec9c84326a6d4931a8b97a7249cfd74e91
-A comprehensive React application with authentication, dashboard functionality, and backend integration.
+[![React](https://img.shields.io/badge/React-19.1.1-61dafb?style=flat&logo=react)](https://reactjs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=flat&logo=node.js)](https://nodejs.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Database-47A248?style=flat&logo=mongodb)](https://mongodb.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38b2ac?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
 
-## Features
+WasteZero is a comprehensive environmental impact management platform that connects volunteers with NGOs and waste management organizations to facilitate environmental cleanup initiatives, recycling programs, and community engagement activities.
 
-### ✅ Authentication System
-- **User Registration** with email OTP verification
-- **Secure Login** with password hashing
-- **Forgot Password** functionality with email OTP
-- **JWT Token** based authentication
-- **Protected Routes** for authenticated users
+## 🌟 Key Features
 
-### ✅ Dashboard
-- **Comprehensive Dashboard** with statistics and metrics
-- **User Activity Tracking** with real-time updates
-- **Responsive Design** using Material-UI
-- **Quick Actions** panel for common tasks
+### Multi-Role Dashboard System
+- **Admin Dashboard**: Complete platform oversight with user management and analytics
+- **NGO Dashboard**: Event creation, volunteer management, and impact tracking
+- **Volunteer Dashboard**: Opportunity browsing, application management, and participation tracking
 
-### ✅ Security Features
-- **Password Hashing** using bcryptjs
-- **JWT Token** authentication
-- **Rate Limiting** to prevent abuse
-- **CORS** enabled for cross-origin requests
-- **Input Validation** and sanitization
+### Real-Time Communication
+- **Role-Based Messaging**: Structured communication channels between user types
+  - NGOs ↔ Volunteers: Coordinate environmental activities and opportunities
+  - Admins ↔ All Users: Platform oversight and support
+  - Cross-role restrictions prevent unauthorized communications
+- **Socket.IO Integration**: Real-time bidirectional messaging with live updates
+- **Message Persistence**: Conversation history stored in MongoDB
+- **Unread Indicators**: Visual badges for new messages with count display
+- **User Role Display**: Clear role identification in chat interface
 
-## Tech Stack
+### Advanced Event Management
+- **Event Creation**: Rich event creation with image uploads, skill requirements, and detailed descriptions
+- **Application System**: Complete volunteer application workflow with approval/rejection capabilities
+- **Status Tracking**: Real-time event status updates (active, inactive, completed, cancelled)
+- **Capacity Management**: Automatic tracking of volunteer registrations vs. event capacity
+
+### Professional User Experience
+- **Responsive Design**: Mobile-first design with Tailwind CSS
+- **Image Management**: Profile photos, event images with enlargement functionality
+- **Dynamic Cards**: Real-time data updates with professional styling
+- **Modal Systems**: Comprehensive modal implementations for details, confirmations, and image viewing
+
+### Authentication & Security
+- **JWT Authentication**: Secure token-based authentication
+- **Role-Based Access**: Different access levels for admin, NGO, and volunteer roles
+- **Password Security**: bcrypt hashing for secure password storage
+- **OTP System**: Email-based OTP for password reset functionality
+
+## 🚀 Technology Stack
 
 ### Frontend
-- **React 18** with TypeScript
-- **Material-UI (MUI)** for UI components
-- **React Router** for navigation
-- **Axios** for HTTP requests
-- **Context API** for state management
+- **React 19.1.1**: Modern React with hooks and functional components
+- **Vite 5.4.2**: Lightning-fast build tool and development server
+- **React Router DOM 6.26.1**: Client-side routing with nested layouts
+- **Tailwind CSS 3.4.10**: Utility-first CSS framework for responsive design
+- **Socket.IO Client 4.8.1**: Real-time bidirectional communication
+- **Framer Motion 12.23.12**: Smooth animations and transitions
+- **React Hot Toast & Toastify**: Toast notification systems
+- **Lucide React**: Modern icon library
+- **Axios**: HTTP client for API communication
 
 ### Backend
-- **Node.js** with Express
-- **bcryptjs** for password hashing
-- **jsonwebtoken** for JWT authentication
-- **Nodemailer** for email functionality
-- **Express Rate Limit** for security
+- **Node.js**: JavaScript runtime environment
+- **Express.js 5.1.0**: Web application framework
+- **MongoDB**: NoSQL database for flexible data storage
+- **Mongoose 8.18.1**: MongoDB object modeling and validation
+- **Socket.IO 4.8.1**: Real-time communication server
+- **JWT**: JSON Web Token for authentication
+- **bcrypt**: Password hashing and security
+- **Nodemailer 7.0.6**: Email service for OTP delivery
+- **CORS**: Cross-origin resource sharing configuration
 
-## Project Structure
+### Development Tools
+- **Nodemon**: Automatic server restart during development
+- **ESLint**: Code linting and quality assurance
+- **PostCSS**: CSS processing and optimization
+- **Vitest**: Unit testing framework
+
+## 📁 Project Structure
 
 ```
-wastezero/
-├── src/
-│   ├── components/
-│   │   ├── Login.tsx
-│   │   ├── Register.tsx
-│   │   ├── ForgotPassword.tsx
-│   │   ├── Dashboard.tsx
-│   │   └── ProtectedRoute.tsx
-│   ├── contexts/
-│   │   └── AuthContext.tsx
-│   ├── services/
-│   │   └── api.ts
-│   └── App.tsx
+project-root/
 ├── backend/
-│   ├── server.js
-│   └── package.json
-└── README.md
+│   ├── src/
+│   │   └── server.js              # Main server entry point
+│   ├── controllers/               # API route handlers
+│   │   ├── auth.controller.js     # Authentication logic
+│   │   ├── message.controller.js  # Real-time messaging
+│   │   ├── ngo.controller.js      # NGO-specific operations
+│   │   ├── user.controller.js     # User management
+│   │   ├── volunteer.controller.js # Volunteer operations
+│   │   └── notification.controller.js # Notification system
+│   ├── models/                    # Database schemas
+│   │   ├── user.model.js          # User profile and authentication
+│   │   ├── opportunity.model.js   # Event/opportunity structure
+│   │   ├── application.model.js   # Volunteer applications
+│   │   ├── conversation.model.js  # Chat conversations
+│   │   └── message.model.js       # Individual messages
+│   ├── routes/                    # API route definitions
+│   ├── middleware/                # Authentication and validation
+│   ├── socket/                    # Socket.IO configuration
+│   └── lib/                       # Database connection utilities
+├── frontend/
+│   ├── src/
+│   │   ├── pages/                 # Main application pages
+│   │   │   ├── Homepage.jsx       # Landing page
+│   │   │   ├── AuthPage.jsx       # Login/Registration
+│   │   │   ├── AdminDashboard.jsx # Admin interface
+│   │   │   ├── NGODashboard.jsx   # NGO management interface
+│   │   │   ├── VolunteerDashboard.jsx # Volunteer interface
+│   │   │   ├── MessagePage.jsx    # Real-time chat
+│   │   │   ├── MyProfile.jsx      # User profile management
+│   │   │   └── NotificationsPage.jsx # Notification center
+│   │   ├── components/            # Reusable UI components
+│   │   │   ├── Navbar.jsx         # Navigation header
+│   │   │   ├── Side.jsx           # Sidebar navigation
+│   │   │   ├── OpportunityCard.jsx # Event display cards
+│   │   │   └── ...               # Various UI components
+│   │   ├── services/              # API communication
+│   │   ├── contexts/              # React context providers
+│   │   └── constants/             # Application constants
+│   └── public/                    # Static assets
+└── package.json files             # Dependencies and scripts
 ```
 
-## Installation & Setup
+## 🛠️ Installation & Setup
 
 ### Prerequisites
-- Node.js (v16 or higher)
-- npm or yarn
-
-### Frontend Setup
-
-1. **Navigate to the project directory:**
-   ```bash
-<<<<<<< HEAD
-   cd wastezero
-=======
-   cd WasteZero
-   cd WastezeroMainFolder
->>>>>>> 878db9ec9c84326a6d4931a8b97a7249cfd74e91
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server:**
-   ```bash
-<<<<<<< HEAD
-   npm start
-=======
-   npm run dev
->>>>>>> 878db9ec9c84326a6d4931a8b97a7249cfd74e91
-   ```
-
-   The React app will open at `http://localhost:3000`
+- Node.js (version 14 or higher)
+- MongoDB (local installation or MongoDB Atlas)
+- Git
 
 ### Backend Setup
 
-1. **Navigate to the backend directory:**
+1. **Clone the repository**
    ```bash
-   cd backend
+   git clone <repository-url>
+   cd project-root/backend
    ```
 
-2. **Install dependencies:**
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-3. **Start the backend server:**
-   ```bash
-<<<<<<< HEAD
-   npm start
-=======
-   npm run dev
->>>>>>> 878db9ec9c84326a6d4931a8b97a7249cfd74e91
+3. **Environment Configuration**
+   Create a `.env` file in the backend directory with the following variables:
+   ```env
+   # Database Configuration
+   MONGODB_URI=your_mongodb_connection_string
+   
+   # JWT Configuration
+   JWT_SECRET=your_jwt_secret_key
+   
+   # Server Configuration
+   PORT=4000
+   
+   # Email Configuration (for OTP)
+   EMAIL_HOST=your_smtp_host
+   EMAIL_PORT=your_smtp_port
+   EMAIL_USER=your_email_username
+   EMAIL_PASS=your_email_password
    ```
 
-   The backend API will run at `http://localhost:3001`
+4. **Start the development server**
+   ```bash
+   npm run dev
+   ```
 
-## Usage
+   The backend server will start at `http://localhost:4000`
 
-### 1. User Registration
-- Navigate to `/register`
-- Fill in your details (name, email, password)
-- Verify your email with the OTP sent to your email
-- Account is created and you're redirected to dashboard
+### Frontend Setup
 
-### 2. User Login
-- Navigate to `/login`
-- Enter your email and password
-- Upon successful authentication, you're redirected to dashboard
+1. **Navigate to frontend directory**
+   ```bash
+   cd ../frontend
+   ```
 
-### 3. Forgot Password
-- Navigate to `/forgot-password`
-- Enter your email address
-- Verify the OTP sent to your email
-- Set a new password
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-### 4. Dashboard
-- View comprehensive statistics and metrics
-- Monitor user activity and system status
-- Access quick actions for common tasks
-- Navigate through the application using the top navigation bar
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
 
-## API Endpoints
+   The frontend application will start at `http://localhost:5173`
+
+## 🔑 API Endpoints
 
 ### Authentication
 - `POST /api/auth/register` - User registration
-- `POST /api/auth/send-otp` - Send OTP for verification
-- `POST /api/auth/verify-otp` - Verify OTP
 - `POST /api/auth/login` - User login
-- `POST /api/auth/forgot-password` - Send password reset OTP
-- `POST /api/auth/reset-password` - Reset password with OTP
-- `GET /api/auth/me` - Get current user info
 - `POST /api/auth/logout` - User logout
+- `POST /api/auth/forgot-password` - Password reset request
+- `POST /api/auth/verify-otp` - OTP verification
 
-### Dashboard
-- `GET /api/dashboard/stats` - Get dashboard statistics
-- `GET /api/dashboard/activity` - Get user activity data
+### Events & Opportunities
+- `GET /api/ngo/events` - Fetch NGO events
+- `POST /api/ngo/create-event` - Create new event
+- `PUT /api/ngo/events/:id` - Update event
+- `GET /api/volunteer/opportunities` - Browse available opportunities
+- `POST /api/volunteer/apply/:id` - Apply for opportunity
 
-## Environment Variables
+### Messaging
+- `GET /api/messages/:id` - Fetch conversation messages (role-based access)
+- `POST /api/messages/send/:id` - Send message (role validation enforced)
+- `GET /api/users` - Get compatible users for messaging (filtered by role)
 
-Create a `.env` file in the backend directory:
+### Role-Based Communication Rules
+- **NGO Users**: Can message Volunteers and Admins
+- **Volunteer Users**: Can message NGOs and Admins  
+- **Admin Users**: Can message all user types
+- **Cross-validation**: Both send and receive operations validate role compatibility
 
-```env
-PORT=3001
-JWT_SECRET=your-super-secret-jwt-key
-```
+### Notifications
+- `GET /api/notifications` - Fetch user notifications
+- `POST /api/notifications/mark-read/:id` - Mark notification as read
 
-## Security Features
+## 👥 User Roles & Permissions
 
-### Password Security
-- Passwords are hashed using bcryptjs with 12 salt rounds
-- Minimum password length requirement (6 characters)
-- Secure password comparison using bcrypt.compare()
+### Admin
+- Complete platform oversight
+- User management and moderation
+- System analytics and reporting
+- Event creation and management
 
-### Authentication Security
-- JWT tokens with 24-hour expiration
-- Rate limiting (100 requests per 15 minutes per IP)
-- CORS enabled for secure cross-origin requests
-- Protected routes requiring valid JWT tokens
+### NGO (Non-Governmental Organization)
+- Create and manage environmental events
+- Review and approve volunteer applications
+- Track volunteer participation and impact
+- Communicate with volunteers through messaging
 
-### OTP Security
-- 6-digit numeric OTPs
-- 10-minute expiration time
-- One-time use (deleted after verification)
-- Rate limiting on OTP generation
+### Volunteer
+- Browse available opportunities by category and location
+- Apply for events with personalized messages
+- Track application status and participation history
+- Engage in real-time messaging with NGOs and other volunteers
 
-## Development
+## 🎨 UI/UX Features
 
-### Running in Development Mode
-```bash
-# Frontend (Terminal 1)
-<<<<<<< HEAD
-cd wastezero
-=======
-cd WasteZero
->>>>>>> 878db9ec9c84326a6d4931a8b97a7249cfd74e91
-npm start
+### Professional Design System
+- **Consistent Color Palette**: Teal and green theme reflecting environmental focus
+- **Responsive Layouts**: Mobile-first design with desktop enhancements
+- **Interactive Elements**: Hover effects, loading states, and smooth transitions
+- **Accessibility**: Proper ARIA labels and keyboard navigation support
 
-# Backend (Terminal 2)
-cd backend
-npm run dev
-```
+### Advanced UI Components
+- **Modal Systems**: Event details, image viewing, confirmation dialogs
+- **Image Management**: Profile photos, event images with enlargement functionality
+- **Real-time Updates**: Live notification badges and message indicators
+- **Professional Cards**: Event cards with progress bars, status indicators, and action buttons
 
-### Building for Production
-```bash
-# Frontend
-npm run build
+## 🔧 Development Guidelines
 
-# Backend
-npm start
-```
+### Code Standards
+- **ES6+ JavaScript**: Modern JavaScript features and syntax
+- **Component Architecture**: Modular, reusable React components
+- **API Design**: RESTful endpoints with consistent response formats
+- **Error Handling**: Comprehensive error handling with user-friendly messages
 
-## Testing
+### Performance Optimizations
+- **Image Optimization**: Base64 encoding with size limits (25MB)
+- **Lazy Loading**: Component-based code splitting
+- **Efficient State Management**: Context API for global state
+- **Socket.IO Optimization**: Efficient real-time communication
 
-The application includes comprehensive error handling and validation:
+## 🚀 Deployment
 
-- Form validation on both frontend and backend
-- Error messages for failed operations
-- Loading states for better user experience
-- Responsive design for mobile and desktop
+### Production Build
 
-## Production Considerations
+1. **Backend Production**
+   ```bash
+   cd backend
+   npm install --production
+   npm start
+   ```
 
-### Frontend
-- Build optimization with `npm run build`
-- Environment-specific configuration
-- Error boundary implementation
-- Performance monitoring
+2. **Frontend Production**
+   ```bash
+   cd frontend
+   npm run build
+   npm run preview
+   ```
 
-### Backend
-- Database integration (replace in-memory storage)
-- Email service integration (replace mock email)
-- Environment variable management
-- Logging and monitoring
-- SSL/TLS configuration
-- Load balancing
+### Environment Variables
+Ensure all production environment variables are properly configured before deployment.
 
-## Troubleshooting
-
-### Common Issues
-
-1. **Backend not starting:**
-   - Check if port 3001 is available
-   - Verify all dependencies are installed
-   - Check console for error messages
-
-2. **Frontend not connecting to backend:**
-   - Ensure backend is running on port 3001
-   - Check CORS configuration
-   - Verify API endpoint URLs
-
-3. **Authentication issues:**
-   - Clear browser localStorage
-   - Check JWT token expiration
-   - Verify backend JWT_SECRET
-
-### Debug Mode
-- Frontend: Check browser console for errors
-- Backend: Check terminal output for server logs
-- Network: Use browser DevTools to monitor API calls
-
-<<<<<<< HEAD
-## Contributing
+## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-=======
->>>>>>> 878db9ec9c84326a6d4931a8b97a7249cfd74e91
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## License
+## 📝 License
 
-This project is licensed under the MIT License.
-
-<<<<<<< HEAD
-## Support
-
-For support and questions, please contact the development team or create an issue in the repository.
+This project is licensed under the ISC License.
 
 ---
 
-=======
->>>>>>> 878db9ec9c84326a6d4931a8b97a7249cfd74e91
-**Note:** This is a development version. For production use, implement proper database storage, email services, and additional security measures.
+**WasteZero** - Building a sustainable future through community engagement and environmental action. 🌱
